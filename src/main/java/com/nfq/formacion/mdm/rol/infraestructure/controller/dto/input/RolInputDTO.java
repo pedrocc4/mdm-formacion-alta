@@ -11,9 +11,12 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class RolInputDTO {
-    @NotNull
-    private String rol;
+    @NotNull(message = "El campo 'nombreRol' no puede ser nulo")
+    private String nombreRol;
     private Date fcAltaRol;
     private Date fcBajaRol;
-    private int fk_cliente;
+    @NotNull(message = "El cliente no puede ser nulo al dar de alta un rol")
+    private Integer idCliente;
+    @NotNull(message = "La poliza no puede ser nula al dar de alta un rol")
+    private Integer idPoliza;
 }

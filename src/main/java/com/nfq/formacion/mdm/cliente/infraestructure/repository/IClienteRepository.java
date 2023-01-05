@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IClienteRepository extends JpaRepository<Cliente, Integer> {
-    boolean existsByRowidObject(int rowidObject);
 }

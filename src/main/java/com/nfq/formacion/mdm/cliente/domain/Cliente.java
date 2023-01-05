@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -17,7 +14,9 @@ import java.util.Date;
 @NoArgsConstructor
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "cliente_generator")
+    @TableGenerator(name = "cliente_generator", table = "cliente_generator", pkColumnName = "pk",
+            valueColumnName = "next_value", allocationSize = 1, initialValue = 3)
     private int rowidObject;
     @NotNull
     private String nombre;

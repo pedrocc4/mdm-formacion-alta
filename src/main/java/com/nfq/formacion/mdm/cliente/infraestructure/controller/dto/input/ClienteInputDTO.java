@@ -11,13 +11,13 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class ClienteInputDTO {
-    @NotNull
+    @NotNull(message = "El campo 'nombre' no puede ser nulo")
     private String nombre;
     private String primerApellido;
     private String segundoApellido;
-    @NotNull
+    @NotNull(message = "El campo 'tipoDocumento' no puede ser nulo")
     private String tipoDocumento;
-    @NotNull
+    @NotNull(message = "El campo 'numeroDocumento' no puede ser nulo")
     private String numeroDocumento;
     private String estadoCivil;
     @NotNull

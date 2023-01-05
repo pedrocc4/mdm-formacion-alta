@@ -11,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class PolizaInputDTO {
-    @NotNull
+    @NotNull(message = "El campo 'numPoliza' no puede ser nulo")
     private String numPoliza;
     private String numContrato;
     private String numOrden;
